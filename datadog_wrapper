@@ -84,7 +84,8 @@ getRuntimeDependencies() {
     fi
 
     if [ "$WEBSITE_STACK" == "PHP" ] || [ "$WEBSITE_STACK" == "JAVA" ] || [ "$DD_TOMCAT_VERSION" == "10" ]; then
-        apt-get update && apt-get install -y unzip
+        apk update && apk add unzip
+        apk add curl
     fi
 
     if [ "$DD_TOMCAT_VERSION" == "9" ]; then
